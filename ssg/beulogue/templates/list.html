@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+	<head>
+		<title>
+			{{site.title}}
+		</title>
+	</head>
+
+	<body>		
+		<main id="main">
+			{% for page in pages %}
+			  <section>
+					<a href="{{page.url}}">{{page.title}}</a>
+				</section>
+			{% endfor %}
+		</main>
+	</body>
+</html>

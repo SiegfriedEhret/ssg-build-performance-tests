@@ -3,14 +3,28 @@ const path = require("path")
 module.exports = {
   datasets: {
     base: [1],
-    small: [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
-    large: [1000, 2000, 4000, 8000, 16000, 32000, 64000]
+    small: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+    large: [1000, 2000, 4000, 8000, 16000, 32000, 64000],
+    pouet: [8000]
   },
   log: {
     file: path.resolve(__dirname, `src/results.json`),
     maxHistory: 10
   },
   tests: [
+    {
+      name: "beulogue",
+      color: "#ecb7b8",
+      paths: {
+        build: path.join(__dirname, "ssg/beulogue/public"),
+        content: path.join(__dirname, "ssg/beulogue/content"),
+        root: path.join(__dirname, "ssg/beulogue")
+      },
+      commands: {
+        clean: "rm -rf public",
+        build: "beulogue"
+      }
+    },
     {
       name: "eleventy",
       color: "#222",
